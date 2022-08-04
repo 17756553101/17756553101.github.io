@@ -10,12 +10,11 @@
     <meta name="referrer" content="no-referrer" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="axios的封装mbw,"> 
     <meta name="description" content="前端个人博客,一、axios的基本使用
-
 第一步：安装axios npm install axios
 第二步：新建一个axios文件 这里我建到service中 命名为axios_demo.ts
-第三步：在此文件,"> 
+第三步：在此文件中,"> 
     <meta name="author" content="Ma"> 
     <link rel="alternative" href="atom.xml" title="coderBlog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -27,10 +26,9 @@
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="axios - coderBlog"/>
     <meta name="twitter:description" content="前端个人博客,一、axios的基本使用
-
 第一步：安装axios npm install axios
 第二步：新建一个axios文件 这里我建到service中 命名为axios_demo.ts
-第三步：在此文件,"/>
+第三步：在此文件中,"/>
     
     
     
@@ -39,10 +37,9 @@
     <meta property="og:type" content="object"/>
     <meta property="og:title" content="axios - coderBlog"/>
     <meta property="og:description" content="前端个人博客,一、axios的基本使用
-
 第一步：安装axios npm install axios
 第二步：新建一个axios文件 这里我建到service中 命名为axios_demo.ts
-第三步：在此文件,"/>
+第三步：在此文件中,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -82,17 +79,42 @@
 
         </div>
         <div class="content markdown">
-            <p><strong>一、axios的基本使用</strong></p>
-<ul>
+            <h1 id="一、axios的基本使用"><a href="#一、axios的基本使用" class="headerlink" title="一、axios的基本使用"></a>一、axios的基本使用</h1><ul>
 <li>第一步：安装axios npm install axios</li>
 <li>第二步：新建一个axios文件 这里我建到service中 命名为axios_demo.ts</li>
 <li>第三步：在此文件中引入axios import axios from ‘axios’</li>
 <li>第四步：在main.ts中引入此文件 import ‘.&#x2F;service&#x2F;axios_demo’</li>
 </ul>
-<p><strong>二、axios的配置选项</strong></p>
-<ul>
-<li>1、配置默认url：例子：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">axios.default.baseURL = &#x27;http://httpbin.org </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<h1 id="二、axios全局的配置选项"><a href="#二、axios全局的配置选项" class="headerlink" title="二、axios全局的配置选项"></a>二、axios全局的配置选项</h1><h2 id="1、配置默认url：例子："><a href="#1、配置默认url：例子：" class="headerlink" title="1、配置默认url：例子："></a>1、配置默认url：例子：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">axios.default.baseURL = &#x27;http://httpbin.org&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2、配置超时时间："><a href="#2、配置超时时间：" class="headerlink" title="2、配置超时时间："></a>2、配置超时时间：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">axios.default.timeout = 10000</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="3、配置headers："><a href="#3、配置headers：" class="headerlink" title="3、配置headers："></a>3、配置headers：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">axios.default.header= &#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="三、axios针对每一个请求单独的配置选项"><a href="#三、axios针对每一个请求单独的配置选项" class="headerlink" title="三、axios针对每一个请求单独的配置选项"></a>三、axios针对每一个请求单独的配置选项</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&#x27;/get&#x27;,&#123;</span><br><span class="line">    params:&#123;</span><br><span class="line">        name:&#x27;coderwhy&#x27;,</span><br><span class="line">        age:18</span><br><span class="line">    &#125;// 参数</span><br><span class="line">    timeout:5000,// 超时时间</span><br><span class="line">    header:&#123;&#125;,// 配置header</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="四、axios-all"><a href="#四、axios-all" class="headerlink" title="四、axios.all"></a>四、axios.all</h1><h2 id="多个请求一起返回，本质上是promise-all"><a href="#多个请求一起返回，本质上是promise-all" class="headerlink" title="多个请求一起返回，本质上是promise.all"></a>多个请求一起返回，本质上是promise.all</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">axios.all([</span><br><span class="line">    axios.get(&#x27;/get&#x27;,&#123;params: &#123;name: &#x27;mmm&#x27;,age: &#x27;22&#x27;&#125; &#125;),</span><br><span class="line">    axios.post(&#x27;/post&#x27;,&#123;data: &#123;name: &#x27;mmm&#x27;,age: &#x27;22&#x27;&#125; &#125;),</span><br><span class="line">])</span><br><span class="line">.then(&#123;res&#125; =&gt; &#123;</span><br><span class="line">    console.log(res)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="上述请求的返回值res是一个数组-数组中包含了第一个请求的结果和第二个请求的结果-两个结果拿到的都是AxiosResponse类型"><a href="#上述请求的返回值res是一个数组-数组中包含了第一个请求的结果和第二个请求的结果-两个结果拿到的都是AxiosResponse类型" class="headerlink" title="上述请求的返回值res是一个数组 数组中包含了第一个请求的结果和第二个请求的结果 两个结果拿到的都是AxiosResponse类型"></a>上述请求的返回值res是一个数组 数组中包含了第一个请求的结果和第二个请求的结果 两个结果拿到的都是AxiosResponse类型</h2><h1 id="五、axios拦截器"><a href="#五、axios拦截器" class="headerlink" title="五、axios拦截器"></a>五、axios拦截器</h1><p><strong>在实际开发中 可能遇到以下情况</strong><br><strong>当你向服务器端发送请求时 需要给每个请求携带上token 将token放到请求头里</strong><br><strong>请求时间比较长，在请求过程当中在界面上显示loading的提示，等到请求结束时把loading移除掉，这里我们就需要把loading先放到界面上，等待请求完毕再把loading移除</strong><br><strong>种种情况都说明我们经常需要把请求拦截下来 做一些事情</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// interceptors 拦截器</span><br><span class="line">// axios.interceptors.request拦截请求</span><br><span class="line">// axios.interceptors.response拦截响应</span><br><span class="line">// axios.interceptors.request.use(fn1,fn2)</span><br><span class="line">// fn1代表请求发送成功会执行的函数 fn2表示请求发送失败时会执行的函数</span><br><span class="line"></span><br><span class="line">axios.interceptors.request.use((config) =&gt; &#123;</span><br><span class="line">    // 这里的config是上述的一些配置 例如给请求添加token 做loading的动画</span><br><span class="line">    console.log(&quot;请求成功的拦截&quot;)</span><br><span class="line">    return config //用完后要将这个config返回出去</span><br><span class="line">&#125;,(err) =&gt; &#123;</span><br><span class="line">    console.log(&quot;请求发生错误&quot;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// axios.interceptors.response.use(fn1,fn2)</span><br><span class="line">// fn1: 服务器相应成功(服务器正常返回了数据 状态码：20x)</span><br><span class="line"></span><br><span class="line">axios.interceptors.response.use((res) =&gt; &#123;</span><br><span class="line">    return res</span><br><span class="line">&#125;,(err) =&gt; &#123;</span><br><span class="line">    console.log(&#x27;服务器相应失败&#x27;)</span><br><span class="line">    return err</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="六、axios的封装"><a href="#六、axios的封装" class="headerlink" title="六、axios的封装"></a>六、axios的封装</h1><h3 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h3><ul>
+<li>第一步：在service下创建文件 index.js 作为统一的出口</li>
+<li>第二步：export default mRequest &#x3D; {} 加m前缀是为了防止命名冲突</li>
+<li>第三步：在request(service下属文件夹)文件夹中新建index.ts</li>
+<li>第四步：在此文件中创建一个类 class MRequest{}</li>
+<li>第五步：导出这个类 export default MRequest &#x3D; {}</li>
+<li>第六步：在service的index.ts中导入这个类impor MRequest from ‘.&#x2F;request’</li>
+<li>第七步：导出：export default new MRequest() 或者 const mRequest &#x3D; new MRequest 然后export default mRequest</li>
+<li>第八步：在main.ts中导入 import mRequest from ‘.&#x2F;service’ 因为是index.ts默认接口所以可以不写</li>
 </ul>
+<h3 id="封装函数"><a href="#封装函数" class="headerlink" title="封装函数"></a>封装函数</h3><ul>
+<li>在service&#x2F;request&#x2F;index.ts 中的class MRequest 类中封装函数 这里封装好的函数可以在别的地方通过.函数名的方式调用</li>
+<li>为了让创建出来的实例没人任何干扰 例子：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const mRequest=new MRequest(&#123;</span><br><span class="line">    baseURL:&#x27;地址一&#x27;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const mRequest2=new MRequest(&#123;</span><br><span class="line">    baseURL:&#x27;地址二&#x27;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+解决方案：<br>在 MRequest类中这么写：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class MRequest&#123;</span><br><span class="line">    instance: any</span><br><span class="line"></span><br><span class="line">    constructar(config: any) &#123;</span><br><span class="line">        this.instance=axios.create(config)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+因为每次new一个实例的时候都会触发构造器 我们将参数接受过来后改变instance变量 不会让他们参生任何影响<br>这里的 instance需要一个确切的类型 axios给了我们一个确切的类型<br>首先我们需要引入 import type { AxiosInstance } from ‘axios’<br>这个类型是axios给我们封装好的 所以我们完整的代码应该这么写<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class MRequest&#123;</span><br><span class="line">    instance: AxiosInstance</span><br><span class="line"></span><br><span class="line">    constructar(config: AxiosRequestConfig) &#123;</span><br><span class="line">        this.instance=axios.create(config)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这里的config是AxiosRequestConfig类型 也是axios封装好的 里面有一些可选参数<br><img src="https://s1.doveoss.com/i/2022/08/04/11647qn.png" alt="alt AxiosRequestConfig类型的可选参数"><br>这样我们在实例传入对应的参数都有提示<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const mRequest = new MRequest(&#123;</span><br><span class="line">  baseURL: &#x27;&#x27;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+这里的baseURL我们不要写死 可以写到config.ts里 这样可以自动区分 开发环境 生产环境和测试环境<br>这里我们封装了两个参数 需要更多参数可以来这里加<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let BASE_URL = &#x27;&#x27;</span><br><span class="line">const TIME_OUT = 10000</span><br><span class="line"></span><br><span class="line">if (process.env.NODE_ENV === &#x27;development&#x27;) &#123;</span><br><span class="line">  BASE_URL = &#x27;http://123.207.32.32:8000/&#x27;</span><br><span class="line">&#125; else if (process.env.NODE_ENV === &#x27;production&#x27;) &#123;</span><br><span class="line">  BASE_URL = &#x27; &#x27;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  BASE_URL = &#x27; &#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export &#123; BASE_URL, TIME_OUT &#125;</span><br></pre></td></tr></table></figure>
+在service的index.ts中引入并使用<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import MRequest from &#x27;./request&#x27;</span><br><span class="line">import &#123; BASE_URL, TIME_OUT &#125; from &#x27;./request/config&#x27;</span><br><span class="line">const mRequest = new MRequest(&#123;</span><br><span class="line">  baseURL: BASE_URL,</span><br><span class="line">  timeout: TIME_OUT</span><br><span class="line">&#125;)</span><br><span class="line">export default mRequest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+接下来 我们可以尝试一下封装一个request函数<br>首先 在 MRequest类中创建一个request函数<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class MRequest &#123;</span><br><span class="line">  instance: AxiosInstance</span><br><span class="line">  constructor(config: AxiosRequestConfig) &#123;</span><br><span class="line">    this.instance = axios.create(config)</span><br><span class="line">  &#125;</span><br><span class="line">  request(config: AxiosRequestConfig): void &#123;</span><br><span class="line">    this.instance.request(config).then((res) =&gt; &#123;</span><br><span class="line">      console.log(res)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这里的config也是AxiosRequestConfig类型<br>这样 我们就简单的实现了一个request函数啦<br>接下来让我们去main.ts文件中使用一下吧<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createApp &#125; from &#x27;vue&#x27;</span><br><span class="line">import App from &#x27;./App.vue&#x27;</span><br><span class="line">import router from &#x27;./router&#x27;</span><br><span class="line">import store from &#x27;./store&#x27;</span><br><span class="line">// 引入一下</span><br><span class="line">import mRquest from &#x27;./service&#x27;</span><br><span class="line">// import &#x27;./service/axios_demo&#x27;</span><br><span class="line"></span><br><span class="line">// 在这里调用request函数</span><br><span class="line">mRquest.request(&#123;</span><br><span class="line">  url: &#x27;/home/multidata&#x27;,</span><br><span class="line">  method: &#x27;GET&#x27;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">createApp(App).use(store).use(router).mount(&#x27;#app&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+运行结果：<br><img src="https://s1.doveoss.com/i/2022/08/04/12f2sxw.png" alt="alt AxiosRequestConfig类型的可选参数"></li>
+</ul>
+<p><strong>小总结：简单来说，首先新建service下的index.ts文件 该文件用来实例一个或多个封装好的axios对象并导出。其次在service下新建request文件夹，新建index.ts和config.ts文件，分别用来做axios封装的具体实现和自动区分运行环境的配置文件</strong></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -102,11 +124,15 @@
                 <ul id="audio-list" style="display:none">
                     
                         
-                            <li title="0" data-url="https://link.hhtjim.com/163/441491828.mp3"></li>
+                            <li title="0" data-url="https://link.hhtjim.com/163/442869203.mp3"></li>
                         
                     
                         
-                            <li title="1" data-url="https://link.hhtjim.com/163/442869203.mp3"></li>
+                            <li title="1" data-url="https://link.hhtjim.com/163/441491828.mp3"></li>
+                        
+                    
+                        
+                            <li title="2" data-url="https://link.hhtjim.com/163/442869203.mp3"></li>
                         
                     
                 </ul>
